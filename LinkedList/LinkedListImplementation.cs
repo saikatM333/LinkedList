@@ -99,12 +99,13 @@ public class CustomLinkedList<T>
         else
         {
             node<T> temp = Head;
-            while (current < position - 1)
+            while (temp != null && current < position - 1)
             {
                 current++;
                 temp = temp.Next;
             }
-            newNode.Next = temp.Next.Next;
+            newNode.Next = temp.Next;
+            temp.Next = newNode;
         }
     }
 
