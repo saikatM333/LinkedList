@@ -74,6 +74,39 @@ public class CustomLinkedList<T>
         temp.Next = null;
         return data;
     }
+    public void insertInBetween(int position, T value)
+    {
+        node<T> newNode = new node<T>(value);
+        int current = 0;
+        if (position <= -1)
+        {
+            Console.WriteLine("enter the position more than 0");
+        }
+        else if (position > count)
+        {
+            node<T> temp = Head;
+            while (temp.Next != null)
+            {
+                temp = temp.Next;
+
+            }
+            temp.Next = newNode;
+        }
+        else if (count == 0)
+        {
+            Head = newNode;
+        }
+        else
+        {
+            node<T> temp = Head;
+            while (current < position - 1)
+            {
+                current++;
+                temp = temp.Next;
+            }
+            newNode.Next = temp.Next.Next;
+        }
+    }
 
     public T deleteFirst()
     {
