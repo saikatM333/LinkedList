@@ -13,8 +13,18 @@ public node(T data)
         Next = null;
     }
 }
+public class CustomLinkedList<T>
+{
+    private node<T> Head;
+    private int count;
+    public CustomLinkedList()
+    {
+        Head = null;
+        count = 0;
+    }
+}
 
-public class LinkedListImplementation
+    public class LinkedListImplementation
 {
     public  static void Main(string[] args)
     {
