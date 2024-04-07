@@ -22,9 +22,23 @@ public class CustomLinkedList<T>
         Head = null;
         count = 0;
     }
+    public void append(T data)
+    {
+        count++;
+        node<T> node = new node<T>(data);
+        if (Head == null)
+        {
+            Head = node;
+        }
+        else
+        {
+            node.Next = Head;
+            Head = node;
+        }
+    }
 }
 
-    public class LinkedListImplementation
+public class LinkedListImplementation
 {
     public  static void Main(string[] args)
     {
