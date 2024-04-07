@@ -36,6 +36,25 @@ public class CustomLinkedList<T>
             Head = node;
         }
     }
+    public void insert(T data)
+    {
+        count++;
+        node<T> node = new node<T>(data);
+
+        if (Head == null)
+        {
+            Head = node;
+        }
+        else
+        {
+            node<T> temp = Head;
+            while (temp.Next != null)
+            {
+                temp = temp.Next;
+            }
+            temp.Next = node;
+        }
+    }
 }
 
 public class LinkedListImplementation
