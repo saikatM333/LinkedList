@@ -55,6 +55,26 @@ public class CustomLinkedList<T>
             temp.Next = node;
         }
     }
+    public T deleteLast()
+    {
+        count--;
+        if (Head == null)
+        {
+            Console.WriteLine("no elemnt present to delete ");
+            count++;
+
+        }
+
+        node<T> temp = Head;
+        while (temp.Next.Next != null)
+        {
+            temp = temp.Next;
+        }
+        T data = temp.Next.Data;
+        temp.Next = null;
+        return data;
+    }
+
     public T deleteFirst()
     {
         count--;
