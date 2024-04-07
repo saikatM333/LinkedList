@@ -120,12 +120,40 @@ public class CustomLinkedList<T>
         Head = Head.Next;
         return data;
     }
+    public void display()
+    {
+        Console.WriteLine(" display the element of the linked list ");
+        node<T> temp = Head;
+        while (temp != null)
+        {
+            if (temp.Next != null)
+            {
+                Console.Write(temp.Data + "->");
+                temp = temp.Next;
+            }
+            else
+            {
+                Console.WriteLine(temp.Data);
+                temp = temp.Next;
+            }
+        }
+    }
 }
 
 public class LinkedListImplementation
 {
     public  static void Main(string[] args)
     {
-        Console.WriteLine("Linked list implemntation ");
+        Console.WriteLine("Linked list implemntation "); 
+        CustomLinkedList<int> customLinkedList = new CustomLinkedList<int>();
+        customLinkedList.append(1);
+        customLinkedList.append(2);
+        customLinkedList.insert(3);
+        customLinkedList.insert(4);
+        customLinkedList.insertInBetween(1, 5);
+        customLinkedList.display();
+
+
+
     }
 }
